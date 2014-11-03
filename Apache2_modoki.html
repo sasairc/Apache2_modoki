@@ -2,55 +2,55 @@
 <!-- Apache2のファイル一覧ぽくするやつ -->
 
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Index of {Title}</title>
-	</head>
-	<body>
-		<table>
-			<h1>Index of {Title}</h1>
-			<th><th>Name</th><th>Last modified</th>
-			<tr><th colspan="5"><hr></th></tr></th>
+    <head>
+        <meta charset="utf-8">
+        <title>Index of {Title}</title>
+    </head>
+    <body>
+        <table>
+            <h1>Index of {Title}</h1>
+            <th><th>Name</th><th>Last modified</th>
+            <tr><th colspan="5"><hr></th></tr></th>
 
-			{block:Posts}
-				{block:PermalinkPage}
-					<tr>
-						<a href="/../..">Parent Directory</a>
-					</tr>
-				{/block:PermalinkPage}
+            {block:Posts}
+                {block:PermalinkPage}
+                    <tr>
+                        <a href="/../..">Parent Directory</a>
+                    </tr>
+                {/block:PermalinkPage}
 
-				{block:Photo}
-					<div class="entry-content">
-						{LinkOpenTag}
-						<tr>
-							<td valign="top">
-								<img src={PhotoURL-75sq} alt="{PhotoAlt}"/>
-							</td>
-							<td>
-								<a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
-							</td>
-							<td>
-								<a align="right">
-									{DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-								</a>
-							</td>
-						</tr>
-					</div>
-				{/block:Photo}
+                {block:Photo}
+                    <div class="entry-content">
+                        {LinkOpenTag}
+                        <tr>
+                            <td valign="top">
+                                <img src={PhotoURL-75sq} alt="{PhotoAlt}"/>
+                            </td>
+                            <td>
+                                <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
+                            </td>
+                            <td>
+                                <a align="right">
+                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                </a>
+                            </td>
+                        </tr>
+                    </div>
+                {/block:Photo}
 
-			{/block:Posts}
+            {/block:Posts}
 
-			<tr><th colspan="5"><hr></th></tr>
-		</table>
+            <tr><th colspan="5"><hr></th></tr>
+        </table>
 
-		{block:PreviousPage}
-			<a href={PreviousPage>Prev </a>
-		{/block:PreviousPage}
-		{block:Pagination}
-			{CurrentPage}/{TotalPages}
-		{/block:Pagination}
-		{block:NextPage}
-			<a href={NextPage}> Next</a>
-		{/block:NextPage}
-	</body>
+        {block:PreviousPage}
+            <a href={PreviousPage>Prev </a>
+        {/block:PreviousPage}
+        {block:Pagination}
+            {CurrentPage}/{TotalPages}
+        {/block:Pagination}
+        {block:NextPage}
+            <a href={NextPage}> Next</a>
+        {/block:NextPage}
+    </body>
 </html>
