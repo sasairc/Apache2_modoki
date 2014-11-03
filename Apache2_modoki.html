@@ -9,6 +9,7 @@
     <body>
         <table>
             <h1>Index of {Title}</h1>
+            <th><th>Name</th><th>Last modified</th>
             <tr><th colspan="5"><hr></th></tr>
 
             {block:Posts}
@@ -31,11 +32,20 @@
                         </tr>
                     </div>
                 {/block:Photo}
-
+            
             {/block:Posts}
 
             <tr><th colspan="5"><hr></th></tr>
         </table>
-        <address></address>
+        
+        {block:PreviousPage}
+            <a href={PreviousPage>Prev </a>
+        {/block:PreviousPage}
+        {block:Pagination}
+            {CurrentPage}/{TotalPages}
+        {/block:Pagination}
+        {block:NextPage}
+            <a href={NextPage}> Next</a>
+        {/block:NextPage}
     </body>
 </html>
