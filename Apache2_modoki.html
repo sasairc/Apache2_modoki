@@ -27,7 +27,15 @@
                                 <img src={PhotoURL-75sq} alt="{PhotoAlt}"/>
                             </td>
                             <td>
-                                <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
+                                <!-- Start "Getting Filename from URL." -->
+                                <a href={PhotoURL-HighRes}>
+                                    <script type="text/javascript">
+                                        var url = "{PhotoURL-HighRes}";
+                                        var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+                                        document.write(filename);
+                                    </script>
+                                </a>
+                                <!-- End "Getting Filename from URL." -->
                             </td>
                             <td>
                                 <a align="right">
