@@ -8,8 +8,14 @@
     </head>
     <body>
         <table>
-            <h1>Index of {Title}</h1>
-            <th><th>Name</th><th>Last modified</th>
+            {block:IndexPage}
+                <h1>Index of {Title}</h1>
+            {/block:IndexPage}
+            {block:PermalinkPage}
+                <h1>Index of {Title}{PostID}</h1>
+            {/block:PermalinkPage}
+
+            <th><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th>
             <tr><th colspan="5"><hr></th></tr></th>
 
             {block:Posts}
@@ -27,6 +33,7 @@
                                 <img src={PhotoURL-75sq} alt="{PhotoAlt}"/>
                             </td>
                             <td>
+
                                 <!-- Start "Getting Filename from URL." -->
                                 <a href={PhotoURL-HighRes}>
                                     <script type="text/javascript">
@@ -36,11 +43,21 @@
                                     </script>
                                 </a>
                                 <!-- End "Getting Filename from URL." -->
+
+                            </td>
+                            <td align="right">
+                                {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                            </td>
+                            <td align="right">
+
+                            </td>
+                            <td align="right">
+                                {block:Caption}
+                                    {PhotoAlt}
+                                {/block:Caption}
                             </td>
                             <td>
-                                <a align="right">
-                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-                                </a>
+                                &nbsp;
                             </td>
                         </tr>
                     </div>
@@ -60,5 +77,6 @@
         {block:NextPage}
             <a href={NextPage}> Next</a>
         {/block:NextPage}
+
     </body>
 </html>
