@@ -1,0 +1,29 @@
+*** Apache2_modoki.html	2014-11-06 03:14:40.212647013 +0900
+--- Apache2_modoki_without_js.html	2014-11-06 03:21:49.297427219 +0900
+***************
+*** 48,62 ****
+                              </td>
+                              <td>
+  
+!                                 <!-- Start "Getting Filename from URL." -->
+!                                 <a href={PhotoURL-HighRes}>
+!                                     <script type="text/javascript">
+!                                         var url = "{PhotoURL-HighRes}";
+!                                         var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+!                                         document.write(filename);
+!                                     </script>
+!                                 </a>
+!                                 <!-- End "Getting Filename from URL." -->
+  
+                              </td>
+                              <td align="right">
+--- 48,56 ----
+                              </td>
+                              <td>
+  
+!                                 <!-- Without Javascript (View Long URL) -->
+!                                 <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
+!                                 <!-- Without Javascript (View Long URL)-->
+  
+                              </td>
+                              <td align="right">
