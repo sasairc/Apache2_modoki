@@ -4,14 +4,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Index of {Title}</title>
+        <meta name="if:Hide Tumblr Controls" content="0"/>
+        <style>
+            {CustomCSS}
+            {block:IfHideTumblrControls}
+                #tumblr_controls { display: none; }
+            {/block:IfHideTumblrControls}
+        </style>
     </head>
     <body>
         <table>
             {block:IndexPage}
+                <title>Index of {Title}</title>
                 <h1>Index of {Title}</h1>
             {/block:IndexPage}
             {block:PermalinkPage}
+                <title>Index of {Title}{PostID}</title>
                 <h1>Index of {Title}{PostID}</h1>
             {/block:PermalinkPage}
 
@@ -21,7 +29,14 @@
             {block:Posts}
                 {block:PermalinkPage}
                     <tr>
-                        <a href="/../..">Parent Directory</a>
+                        <td>
+                            <font size="16">&#8617;</font>
+                        </td>
+                        <td>
+                            <a href="/../..">Parent Directory</a>
+                        </td>
+                        <td></td>
+                        <td align="right">-</td>
                     </tr>
                 {/block:PermalinkPage}
 
