@@ -26,4 +26,4 @@ _twitter_  [@sasairc_2](https://twitter.com/sasairc_2)
 ## Thanks  
 
   [Masaya Tk.さん](https://github.com/844196)のpullreq及び、アドバイスはとても参考になりました。  
-  重ねてお礼を申し上げます。
+  重ねて感謝致します。  

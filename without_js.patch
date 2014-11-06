@@ -1,7 +1,7 @@
-*** Apache2_modoki.html	2014-11-06 03:14:40.212647013 +0900
---- Apache2_modoki_without_js.html	2014-11-06 03:21:49.297427219 +0900
+*** Apache2_modoki.html	2014-11-07 01:38:12.191797174 +0900
+--- Apache2_modoki_Without_js.html	2014-11-07 01:46:42.667308732 +0900
 ***************
-*** 48,62 ****
+*** 49,63 ****
                               </td>
                               <td>
   
@@ -17,13 +17,13 @@
   
                               </td>
                               <td align="right">
---- 48,56 ----
+--- 49,57 ----
                               </td>
                               <td>
   
 !                                 <!-- Without Javascript (View Long URL) -->
 !                                 <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
-!                                 <!-- Without Javascript (View Long URL)-->
+!                                 <!-- Without Javascript (View Long URL) -->
   
                               </td>
                               <td align="right">

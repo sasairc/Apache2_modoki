@@ -13,15 +13,16 @@
         </style>
     </head>
     <body>
+        {block:IndexPage}
+            <title>Index of {Title}</title>
+            <h1>Index of {Title}</h1>
+        {/block:IndexPage}
+        {block:PermalinkPage}
+            <title>Index of {Title}{PostID}</title>
+            <h1>Index of {Title}{PostID}</h1>
+        {/block:PermalinkPage}
+
         <table>
-            {block:IndexPage}
-                <title>Index of {Title}</title>
-                <h1>Index of {Title}</h1>
-            {/block:IndexPage}
-            {block:PermalinkPage}
-                <title>Index of {Title}{PostID}</title>
-                <h1>Index of {Title}{PostID}</h1>
-            {/block:PermalinkPage}
 
             <th><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th>
             <tr><th colspan="5"><hr></th></tr></th>
