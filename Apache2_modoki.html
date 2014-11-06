@@ -41,42 +41,123 @@
                     </tr>
                 {/block:PermalinkPage}
 
-                {block:Photo}
-                    <div class="entry-content">
-                        <tr>
-                            <td valign="top">
-                                <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="50" height="50"/>
-                            </td>
-                            <td>
 
-                                <!-- Start "Getting Filename from URL." -->
-                                <a href={PhotoURL-HighRes}>
-                                    <script type="text/javascript">
-                                        var url = "{PhotoURL-HighRes}";
-                                        var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
-                                        document.write(filename);
-                                    </script>
-                                </a>
-                                <!-- End "Getting Filename from URL." -->
+                {block:IndexPage}
+                    {block:Photo}
+                        <div class="entry-content">
+                            <tr>
+                                <td valign="top">
+                                    <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="50" height="50"/>
+                                </td>
+                                <td>
 
-                            </td>
-                            <td align="right">
-                                {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-                            </td>
-                            <td align="right">
-                                <p>-</p>
-                            </td>
-                            <td align="right">
-                                {block:Caption}
-                                    {PhotoAlt}
-                                {/block:Caption}
-                            </td>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                    </div>
-                {/block:Photo}
+                                    <!-- Start "Getting Filename from URL." -->
+                                    <a href={PhotoURL-HighRes}>
+                                        <script type="text/javascript">
+                                            var url = "{PhotoURL-HighRes}";
+                                            var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+                                            document.write(filename);
+                                        </script>
+                                    </a>
+                                    <!-- End "Getting Filename from URL." -->
+
+                                </td>
+                                <td align="right">
+                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                </td>
+                                <td align="right">
+                                    <p>-</p>
+                                </td>
+                                <td align="right">
+                                    {block:Caption}
+                                        {PhotoAlt}
+                                    {/block:Caption}
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </div>
+                    {/block:Photo}
+
+                    {block:Photoset}
+                        <div class="entry-content">
+                            <tr>
+                                <td valign="top">
+                                    <font size="16">&#x1F5C0;</font>
+                                </td>
+                                <td>
+
+                                    <!-- Start "Getting Posts Title (Photoset) from URL." -->
+                                    <a href={Permalink}>
+                                        <script type="text/javascript">
+                                            var url = "{Permalink}";
+                                            var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+                                            document.write(filename + '/');
+                                        </script>
+                                    </a>
+                                    <!-- End "Getting Posts Title (Photoset) from URL." -->
+
+                                </td>
+                                <td align="right">
+                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                </td>
+                                <td align="right">
+                                    <p>-</p>
+                                </td>
+                                <td align="right">
+                                    {block:Caption}
+                                        {PhotoAlt}
+                                    {/block:Caption}
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </div>
+                    {/block:Photoset}
+                {/block:IndexPage}
+                
+                {block:PermalinkPage}
+                    {block:Photoset}
+                        {block:Photos}
+                            <div class="entry-content">
+                                <tr>
+                                    <td>
+                                        <img src="{PhotoURL-250}" alt="" width="50" height="50"/>
+                                    </td>
+                                    <td>
+
+                                        <!-- Start "Getting Filename from URL." -->
+                                        <a href={PhotoURL-HighRes}>
+                                            <script type="text/javascript">
+                                                var url = "{PhotoURL-HighRes}";
+                                                var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+                                                document.write(filename);
+                                            </script>
+                                        </a>
+                                        <!-- End "Getting Filename from URL." -->
+
+                                    </td>
+                                    <td align="right">
+                                        {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                    </td>
+                                    <td align="right">
+                                        <p>-</p>
+                                    </td>
+                                    <td align="right">
+                                        {block:Caption}
+                                            {PhotoAlt}
+                                        {/block:Caption}
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </div>
+                        {/block:Photos}
+                    {/block:Photoset}
+                {/block:PermalinkPage}
 
             {/block:Posts}
 
