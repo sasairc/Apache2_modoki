@@ -16,7 +16,8 @@ Tumblr  my  Layout
 
 ## Licence
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)  
+Icons: [Public Domain](http://www.apache.org/icons/) 
 
 ## Author
 
