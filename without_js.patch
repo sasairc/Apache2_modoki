@@ -1,0 +1,87 @@
+*** Apache2_modoki.html	2014-11-07 06:10:15.366826869 +0900
+--- Apache2_modoki_without_js.html	2014-11-07 06:17:13.413634531 +0900
+***************
+*** 49,63 ****
+                              </td>
+                              <td>
+  
+!                                 <!-- Start "Getting Filename from URL." -->
+!                                 <a href={PhotoURL-HighRes}>
+!                                     <script type="text/javascript">
+!                                         var url = "{PhotoURL-HighRes}";
+!                                         var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+!                                         document.write(filename);
+!                                     </script>
+!                                 </a>
+!                                 <!-- End "Getting Filename from URL." -->
+  
+                              </td>
+                              <td align="right">
+--- 49,57 ----
+                              </td>
+                              <td>
+  
+!                                 <!-- Without Javascript (View Long URL) -->
+!                                 <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
+!                                 <!-- Without Javascript (View Long URL) -->
+  
+                              </td>
+                              <td align="right">
+***************
+*** 87,103 ****
+                                  </td>
+                                  <td>
+  
+!                                     <!-- Start "Getting Posts Title (Photoset) from URL." -->
+!                                     <a href={Permalink}>
+!                                         <script type="text/javascript">
+!                                             var url = "{Permalink}";
+!                                             var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+!                                             document.write(filename + '/');
+!                                         </script>
+!                                     </a>
+!                                     <!-- End "Getting Posts Title (Photoset) from URL." -->
+  
+!                                 </td>
+                                  <td align="right">
+                                      {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                  </td>
+--- 81,91 ----
+                                  </td>
+                                  <td>
+  
+!                                     <!-- Without Javascript (View Long URL) -->
+!                                     <a href={Permalink}>{Permalink}</a>
+!                                     <!-- Without javascript (View Long URL) -->
+  
+! 									</td>
+                                  <td align="right">
+                                      {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                  </td>
+***************
+*** 127,141 ****
+                                      </td>
+                                      <td>
+  
+!                                         <!-- Start "Getting Filename from URL." -->
+!                                         <a href={PhotoURL-HighRes}>
+!                                             <script type="text/javascript">
+!                                                 var url = "{PhotoURL-HighRes}";
+!                                                 var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+!                                                 document.write(filename);
+!                                             </script>
+!                                         </a>
+!                                         <!-- End "Getting Filename from URL." -->
+  
+                                      </td>
+                                      <td align="right">
+--- 115,123 ----
+                                      </td>
+                                      <td>
+  
+!                                         <!-- Without Javascript (View Long URL) -->
+!                                         <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
+!                                         <!-- Without Javascript (View Long URL) -->
+  
+                                      </td>
+                                      <td align="right">

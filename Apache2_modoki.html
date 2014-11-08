@@ -13,15 +13,16 @@
         </style>
     </head>
     <body>
+        {block:IndexPage}
+            <title>Index of {Title}</title>
+            <h1>Index of {Title}</h1>
+        {/block:IndexPage}
+        {block:PermalinkPage}
+            <title>Index of {Title}{PostID}</title>
+            <h1>Index of {Title}{PostID}</h1>
+        {/block:PermalinkPage}
+
         <table>
-            {block:IndexPage}
-                <title>Index of {Title}</title>
-                <h1>Index of {Title}</h1>
-            {/block:IndexPage}
-            {block:PermalinkPage}
-                <title>Index of {Title}{PostID}</title>
-                <h1>Index of {Title}{PostID}</h1>
-            {/block:PermalinkPage}
 
             <th><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th>
             <tr><th colspan="5"><hr></th></tr></th>
@@ -29,7 +30,9 @@
             {block:Posts}
                 {block:PermalinkPage}
                     <tr>
-                        <td></td>
+                        <td>
+                            <font size="16">&#8617;</font>
+                        </td>
                         <td>
                             <a href="/../..">Parent Directory</a>
                         </td>
@@ -42,7 +45,7 @@
                     <div class="entry-content">
                         <tr>
                             <td valign="top">
-                                <img src={PhotoURL-75sq} alt="{PhotoAlt}"/>
+                                <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="50" height="50"/>
                             </td>
                             <td>
 
@@ -61,7 +64,7 @@
                                 {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
                             </td>
                             <td align="right">
-
+                                <p>-</p>
                             </td>
                             <td align="right">
                                 {block:Caption}
@@ -75,10 +78,92 @@
                     </div>
                 {/block:Photo}
 
+                {block:IndexPage}
+                    {block:Photoset}
+                        <div class="entry-content">
+                            <tr>
+                                <td valign="top">
+                                    <font size="16">&#x1F5C0;</font>
+                                </td>
+                                <td>
+
+                                    <!-- Start "Getting Posts Title (Photoset) from URL." -->
+                                    <a href={Permalink}>
+                                        <script type="text/javascript">
+                                            var url = "{Permalink}";
+                                            var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+                                            document.write(filename + '/');
+                                        </script>
+                                    </a>
+                                    <!-- End "Getting Posts Title (Photoset) from URL." -->
+
+                                </td>
+                                <td align="right">
+                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                </td>
+                                <td align="right">
+                                    <p>-</p>
+                                </td>
+                                <td align="right">
+                                    {block:Caption}
+                                        {PhotoAlt}
+                                    {/block:Caption}
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </div>
+                    {/block:Photoset}
+                {/block:IndexPage}
+                
+                {block:PermalinkPage}
+                    {block:Photoset}
+                        {block:Photos}
+                            <div class="entry-content">
+                                <tr>
+                                    <td>
+                                        <img src="{PhotoURL-250}" alt="" width="50" height="50"/>
+                                    </td>
+                                    <td>
+
+                                        <!-- Start "Getting Filename from URL." -->
+                                        <a href={PhotoURL-HighRes}>
+                                            <script type="text/javascript">
+                                                var url = "{PhotoURL-HighRes}";
+                                                var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
+                                                document.write(filename);
+                                            </script>
+                                        </a>
+                                        <!-- End "Getting Filename from URL." -->
+
+                                    </td>
+                                    <td align="right">
+                                        {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                    </td>
+                                    <td align="right">
+                                        <p>-</p>
+                                    </td>
+                                    <td align="right">
+                                        {block:Caption}
+                                            {PhotoAlt}
+                                        {/block:Caption}
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </div>
+                        {/block:Photos}
+                    {/block:Photoset}
+                {/block:PermalinkPage}
+
             {/block:Posts}
 
             <tr><th colspan="5"><hr></th></tr>
         </table>
+
+        <address>Tumblr/Apache2_modoki at tumblr.com Port 80</address>
 
         {block:PreviousPage}
             <a href={PreviousPage>Prev </a>
