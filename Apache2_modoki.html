@@ -24,8 +24,10 @@
             <h1>Index of {Title}</h1>
         {/block:IndexPage}
         {block:PermalinkPage}
-            <title>Index of {Title}{PostID}</title>
-            <h1>Index of {Title}{PostID}</h1>
+            <script type="text/javascript">
+                document.title = 'Index of ' + '{Title}' + _ScrapingURL('{Permalink}') + '/';
+            </script>
+            <h1>Index of {Title}<script type="text/javascript">document.write( _ScrapingURL('{Permalink}') + '/' );</script></h1>
         {/block:PermalinkPage}
 
         <table>
