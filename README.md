@@ -1,7 +1,7 @@
 Tumblr  my  Layout
 ================
 
-　本来はブログサービスである*Thumbr*を、画像アップローダとして利用するために特化した軽量なカスタムテーマです。  
+　本来はブログサービスである*Tumblr*を、画像アップローダとして利用するために特化した軽量なカスタムテーマです。  
 　レイアウトはApacheの「整然としていて見やすい」ファイルリストを参考にしており、SNS特有の煩わしさを軽減します。  
 
 ## Requirement  
@@ -16,7 +16,7 @@ Tumblr  my  Layout
 
 ## Licence
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[MIT](http://opensource.org/licenses/mit-license.php)
 
 ## Author
 
