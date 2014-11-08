@@ -17,6 +17,7 @@ Tumblr  my  Layout
 ## Licence
 
 [MIT](http://opensource.org/licenses/mit-license.php)
+Icons: [Public Domain](http://www.apache.org/icons/) 
 
 ## Author
 
