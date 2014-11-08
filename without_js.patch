@@ -1,16 +1,65 @@
-*** Apache2_modoki.html	2014-11-07 06:10:15.366826869 +0900
---- Apache2_modoki_without_js.html	2014-11-07 06:17:13.413634531 +0900
+*** Tumblr_my_Layout/Apache2_modoki.html	2014-11-08 19:59:32.553943607 +0900
+--- ./Apache2_modoki.html	2014-11-08 20:02:09.380972740 +0900
 ***************
-*** 49,63 ****
+*** 4,10 ****
+  <html>
+      <head>
+          <meta charset="utf-8">
+-         <meta name="text:Bottom Strings" content=""/>
+          <meta name="if:Hide Tumblr Controls" content="0"/>
+          <style>
+              {CustomCSS}
+--- 4,9 ----
+***************
+*** 12,24 ****
+                  #tumblr_controls { display: none; }
+              {/block:IfHideTumblrControls}
+          </style>
+- 
+-         <script type="text/javascript">
+-             _ScrapingURL = function(url) {
+-                     return url.match(".+/(.+?)([\?#;].*)?$")[1];
+-             };
+-         </script>
+- 
+      </head>
+      <body>
+          {block:IndexPage}
+--- 11,16 ----
+***************
+*** 26,39 ****
+              <h1>Index of {Title}</h1>
+          {/block:IndexPage}
+          {block:PermalinkPage}
+!             <script type="text/javascript">
+!                 document.title = ('Index of ' + '{Title}' + _ScrapingURL('{Permalink}') + '/');
+!             </script>
+!             <h1>
+!                 <script type="text/javascript">
+!                     document.write('Index of {Title}' + _ScrapingURL('{Permalink}') + '/');
+!                 </script>
+!             </h1>
+          {/block:PermalinkPage}
+  
+          <table>
+--- 18,25 ----
+              <h1>Index of {Title}</h1>
+          {/block:IndexPage}
+          {block:PermalinkPage}
+!             <title>Index of {Title}{PostID}</title>
+!             <h1>Index of {Title}{PostID}</h1>
+          {/block:PermalinkPage}
+  
+          <table>
+***************
+*** 63,75 ****
                               </td>
                               <td>
   
 !                                 <!-- Start "Getting Filename from URL." -->
 !                                 <a href={PhotoURL-HighRes}>
 !                                     <script type="text/javascript">
-!                                         var url = "{PhotoURL-HighRes}";
-!                                         var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
-!                                         document.write(filename);
+!                                         document.write(_ScrapingURL('{PhotoURL-HighRes}'));
 !                                     </script>
 !                                 </a>
 !                                 <!-- End "Getting Filename from URL." -->
@@ -28,16 +77,14 @@
                               </td>
                               <td align="right">
 ***************
-*** 87,103 ****
+*** 99,113 ****
                                   </td>
                                   <td>
   
 !                                     <!-- Start "Getting Posts Title (Photoset) from URL." -->
 !                                     <a href={Permalink}>
 !                                         <script type="text/javascript">
-!                                             var url = "{Permalink}";
-!                                             var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
-!                                             document.write(filename + '/');
+!                                             document.write(_ScrapingURL('{Permalink}') + '/');
 !                                         </script>
 !                                     </a>
 !                                     <!-- End "Getting Posts Title (Photoset) from URL." -->
@@ -59,16 +106,14 @@
                                       {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
                                   </td>
 ***************
-*** 127,141 ****
+*** 137,149 ****
                                       </td>
                                       <td>
   
 !                                         <!-- Start "Getting Filename from URL." -->
 !                                         <a href={PhotoURL-HighRes}>
 !                                             <script type="text/javascript">
-!                                                 var url = "{PhotoURL-HighRes}";
-!                                                 var filename = url.match(".+/(.+?)([\?#;].*)?$")[1];
-!                                                 document.write(filename);
+!                                                 document.write(_ScrapingURL('{PhotoURL-HighRes}'));
 !                                             </script>
 !                                         </a>
 !                                         <!-- End "Getting Filename from URL." -->
@@ -85,3 +130,29 @@
   
                                       </td>
                                       <td align="right">
+***************
+*** 171,186 ****
+              <tr><th colspan="5"><hr></th></tr>
+          </table>
+  
+!         <address>
+!             <script type="text/javascript">
+!                 str = '{text:Bottom Strings}';
+!                 if (str) {
+!                     document.write(str);
+!                 } else {
+!                     document.write('Tumblr/Apache2_modoki at tumblr.com Port 80');
+!                 }
+!             </script>
+!         </address>
+  
+          {block:PreviousPage}
+              <a href={PreviousPage>Prev </a>
+--- 145,151 ----
+              <tr><th colspan="5"><hr></th></tr>
+          </table>
+  
+!         <address>Tumblr/Apache2_modoki at tumblr.com Port 80</address>
+  
+          {block:PreviousPage}
+              <a href={PreviousPage>Prev </a>
