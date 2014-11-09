@@ -1,5 +1,5 @@
-*** Tumblr_my_Layout/Apache2_modoki.html	2014-11-08 19:59:32.553943607 +0900
---- ./Apache2_modoki.html	2014-11-08 20:02:09.380972740 +0900
+*** ../Tumblr_my_Layout/Apache2_modoki.html	2014-11-10 05:16:54.679733513 +0900
+--- Apache2_modoki.html	2014-11-08 20:02:09.380972740 +0900
 ***************
 *** 4,10 ****
   <html>
@@ -106,7 +106,26 @@
                                       {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
                                   </td>
 ***************
-*** 137,149 ****
+*** 115,121 ****
+                                      <p>-</p>
+                                  </td>
+                                  <td align="right">
+! 
+                                  </td>
+                                  <td>
+                                      &nbsp;
+--- 93,101 ----
+                                      <p>-</p>
+                                  </td>
+                                  <td align="right">
+!                                     {block:Caption}
+!                                         {PhotoAlt}
+!                                     {/block:Caption}
+                                  </td>
+                                  <td>
+                                      &nbsp;
+***************
+*** 135,147 ****
                                       </td>
                                       <td>
   
@@ -131,7 +150,7 @@
                                       </td>
                                       <td align="right">
 ***************
-*** 171,186 ****
+*** 169,184 ****
               <tr><th colspan="5"><hr></th></tr>
           </table>
   
