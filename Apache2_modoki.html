@@ -152,7 +152,7 @@
                                     </td>
                                     <td align="right">
                                         {block:Caption}
-                                            {PhotoAlt}
+                                            {Caption}
                                         {/block:Caption}
                                     </td>
                                     <td>
@@ -170,14 +170,12 @@
         </table>
 
         <address>
-            <script type="text/javascript">
-                str = '{text:Bottom Strings}';
-                if (str) {
-                    document.write(str);
-                } else {
-                    document.write('Tumblr/Apache2_modoki at tumblr.com Port 80');
-                }
-            </script>
+            {block:IfBottomStrings}
+                {text:Bottom Strings}
+            {/block:IfBottomStrings}
+            {block:IfNotBottomStrings}
+                Tumblr/Apache2_modoki at tumblr.com Port 80
+            {/block:IfNotBottomStrings}
         </address>
 
         {block:PreviousPage}
