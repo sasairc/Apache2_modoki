@@ -1,5 +1,5 @@
-*** Apache2_modoki.html	2014-11-10 15:43:04.505114673 +0900
---- flavor/Apache2_modoki_a.html	2014-11-16 19:59:14.845335430 +0900
+*** Apache2_modoki.html	2014-11-16 20:10:10.036081360 +0900
+--- flavor/Apache2_modoki_a.html	2014-11-16 20:38:22.083733087 +0900
 ***************
 *** 59,65 ****
                       <div class="entry-content">
@@ -13,7 +13,7 @@
                       <div class="entry-content">
                           <tr>
                               <td valign="top">
-!                                 <div style="height:50px; width:50px; background:url({PhotoURL-75}) no-repeat center;"></div>
+!                                 <div style="height:50px; width:50px; background:url({PhotoURL-75sq}) no-repeat center;"></div>
                               </td>
                               <td>
   
