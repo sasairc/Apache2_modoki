@@ -1,0 +1,40 @@
+*** Apache2_modoki.html	2014-11-10 15:43:04.505114673 +0900
+--- flavor/Apache2_modoki_b.html	2014-11-16 19:32:41.416110413 +0900
+***************
+*** 58,65 ****
+                  {block:Photo}
+                      <div class="entry-content">
+                          <tr>
+!                             <td valign="top">
+!                                 <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="50" height="50"/>
+                              </td>
+                              <td>
+  
+--- 58,65 ----
+                  {block:Photo}
+                      <div class="entry-content">
+                          <tr>
+!                             <td align="top">
+!                                 <div align="center"><img src="{PhotoURL-250}" alt="" style="max-width:50px; max-height:50px;"/></div>
+                              </td>
+                              <td>
+  
+***************
+*** 130,137 ****
+                          {block:Photos}
+                              <div class="entry-content">
+                                  <tr>
+!                                     <td>
+!                                         <img src="{PhotoURL-250}" alt="" width="50" height="50"/>
+                                      </td>
+                                      <td>
+  
+--- 130,137 ----
+                          {block:Photos}
+                              <div class="entry-content">
+                                  <tr>
+!                                     <td align="top">
+!                                         <div align="center"><img src="{PhotoURL-250}" alt="" style="max-width:50px; max-height:50px;"/></div>
+                                      </td>
+                                      <td>
+  
