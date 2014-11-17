@@ -58,8 +58,8 @@
                 {block:Photo}
                     <div class="entry-content">
                         <tr>
-                            <td valign="top">
-                                <div style="height:50px; width:50px; background:url({PhotoURL-75sq}) no-repeat center;"></div>
+                            <td align="top">
+                                <div align="center"><img src="{PhotoURL-250}" alt="" style="max-width:50px; max-height:50px;"/></div>
                             </td>
                             <td>
 
@@ -130,8 +130,8 @@
                         {block:Photos}
                             <div class="entry-content">
                                 <tr>
-                                    <td>
-                                        <div style="height:50px; width:50px; background:url({PhotoURL-250}) no-repeat center;"></div>
+                                    <td align="top">
+                                        <div align="center"><img src="{PhotoURL-250}" alt="" style="max-width:50px; max-height:50px;"/></div>
                                     </td>
                                     <td>
 
@@ -152,7 +152,7 @@
                                     </td>
                                     <td align="right">
                                         {block:Caption}
-                                            {PhotoAlt}
+                                            {Caption}
                                         {/block:Caption}
                                     </td>
                                     <td>
@@ -170,24 +170,22 @@
         </table>
 
         <address>
-            <script type="text/javascript">
-                str = '{text:Bottom Strings}';
-                if (str) {
-                    document.write(str);
-                } else {
-                    document.write('Tumblr/Apache2_modoki at tumblr.com Port 80');
-                }
-            </script>
+            {block:IfBottomStrings}
+                {text:Bottom Strings}
+            {/block:IfBottomStrings}
+            {block:IfNotBottomStrings}
+                Tumblr/Apache2_modoki at tumblr.com Port 80
+            {/block:IfNotBottomStrings}
         </address>
 
         {block:PreviousPage}
-            <a href={PreviousPage}>Prev </a>
+            <a href={PreviousPage}>Prev</a>
         {/block:PreviousPage}
         {block:Pagination}
-            {CurrentPage}/{TotalPages}
+            &nbsp;{CurrentPage}/{TotalPages}&nbsp;
         {/block:Pagination}
         {block:NextPage}
-            <a href={NextPage}> Next</a>
+            <a href={NextPage}>Next</a>
         {/block:NextPage}
 
     </body>

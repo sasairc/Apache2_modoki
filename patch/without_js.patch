@@ -1,21 +1,23 @@
-*** ../Tumblr_my_Layout/Apache2_modoki.html	2014-11-10 05:16:54.679733513 +0900
---- Apache2_modoki.html	2014-11-08 20:02:09.380972740 +0900
+*** Apache2_modoki.html	2014-11-17 16:48:04.776192109 +0900
+--- temp_Tumblr_my_Layout/Apache2_modoki_without_js.html	2014-11-17 16:54:35.104347140 +0900
 ***************
-*** 4,10 ****
+*** 1,5 ****
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+! <!-- Apache2のファイル一覧ぽくするやつ -->
+  
   <html>
       <head>
-          <meta charset="utf-8">
--         <meta name="text:Bottom Strings" content=""/>
-          <meta name="if:Hide Tumblr Controls" content="0"/>
-          <style>
-              {CustomCSS}
---- 4,9 ----
+--- 1,5 ----
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+! <!-- Apache2のファイル一覧ぽくするやつ (Without Java Script) -->
+  
+  <html>
+      <head>
 ***************
-*** 12,24 ****
-                  #tumblr_controls { display: none; }
+*** 13,24 ****
               {/block:IfHideTumblrControls}
           </style>
-- 
+  
 -         <script type="text/javascript">
 -             _ScrapingURL = function(url) {
 -                     return url.match(".+/(.+?)([\?#;].*)?$")[1];
@@ -25,7 +27,7 @@
       </head>
       <body>
           {block:IndexPage}
---- 11,16 ----
+--- 13,18 ----
 ***************
 *** 26,39 ****
               <h1>Index of {Title}</h1>
@@ -42,7 +44,7 @@
           {/block:PermalinkPage}
   
           <table>
---- 18,25 ----
+--- 20,27 ----
               <h1>Index of {Title}</h1>
           {/block:IndexPage}
           {block:PermalinkPage}
@@ -52,7 +54,7 @@
   
           <table>
 ***************
-*** 63,75 ****
+*** 63,76 ****
                               </td>
                               <td>
   
@@ -63,21 +65,23 @@
 !                                     </script>
 !                                 </a>
 !                                 <!-- End "Getting Filename from URL." -->
-  
+! 
                               </td>
                               <td align="right">
---- 49,57 ----
+                                  {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+--- 51,60 ----
                               </td>
                               <td>
   
 !                                 <!-- Without Javascript (View Long URL) -->
 !                                 <a href={PhotoURL-HighRes}>{PhotoURL-HighRes}</a>
 !                                 <!-- Without Javascript (View Long URL) -->
-  
+!                                 
                               </td>
                               <td align="right">
+                                  {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
 ***************
-*** 99,113 ****
+*** 99,111 ****
                                   </td>
                                   <td>
   
@@ -89,11 +93,9 @@
 !                                     </a>
 !                                     <!-- End "Getting Posts Title (Photoset) from URL." -->
   
-!                                 </td>
-                                  <td align="right">
-                                      {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
                                   </td>
---- 81,91 ----
+                                  <td align="right">
+--- 83,91 ----
                                   </td>
                                   <td>
   
@@ -101,29 +103,8 @@
 !                                     <a href={Permalink}>{Permalink}</a>
 !                                     <!-- Without javascript (View Long URL) -->
   
-! 									</td>
-                                  <td align="right">
-                                      {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-                                  </td>
-***************
-*** 115,121 ****
-                                      <p>-</p>
                                   </td>
                                   <td align="right">
-! 
-                                  </td>
-                                  <td>
-                                      &nbsp;
---- 93,101 ----
-                                      <p>-</p>
-                                  </td>
-                                  <td align="right">
-!                                     {block:Caption}
-!                                         {PhotoAlt}
-!                                     {/block:Caption}
-                                  </td>
-                                  <td>
-                                      &nbsp;
 ***************
 *** 135,147 ****
                                       </td>
@@ -150,28 +131,61 @@
                                       </td>
                                       <td align="right">
 ***************
-*** 169,184 ****
+*** 152,158 ****
+                                      </td>
+                                      <td align="right">
+                                          {block:Caption}
+!                                             {Caption}
+                                          {/block:Caption}
+                                      </td>
+                                      <td>
+--- 128,134 ----
+                                      </td>
+                                      <td align="right">
+                                          {block:Caption}
+!                                             {PhotoAlt}
+                                          {/block:Caption}
+                                      </td>
+                                      <td>
+***************
+*** 169,191 ****
               <tr><th colspan="5"><hr></th></tr>
           </table>
   
 !         <address>
-!             <script type="text/javascript">
-!                 str = '{text:Bottom Strings}';
-!                 if (str) {
-!                     document.write(str);
-!                 } else {
-!                     document.write('Tumblr/Apache2_modoki at tumblr.com Port 80');
-!                 }
-!             </script>
+!             {block:IfBottomStrings}
+!                 {text:Bottom Strings}
+!             {/block:IfBottomStrings}
+!             {block:IfNotBottomStrings}
+!                 Tumblr/Apache2_modoki at tumblr.com Port 80
+!             {/block:IfNotBottomStrings}
 !         </address>
   
           {block:PreviousPage}
-              <a href={PreviousPage>Prev </a>
---- 145,151 ----
+!             <a href={PreviousPage}>Prev</a>
+          {/block:PreviousPage}
+          {block:Pagination}
+!             &nbsp;{CurrentPage}/{TotalPages}&nbsp;
+          {/block:Pagination}
+          {block:NextPage}
+!             <a href={NextPage}>Next</a>
+          {/block:NextPage}
+  
+      </body>
+--- 145,160 ----
               <tr><th colspan="5"><hr></th></tr>
           </table>
   
 !         <address>Tumblr/Apache2_modoki at tumblr.com Port 80</address>
   
           {block:PreviousPage}
-              <a href={PreviousPage>Prev </a>
+!             <a href={PreviousPage}>Prev </a>
+          {/block:PreviousPage}
+          {block:Pagination}
+!             {CurrentPage}/{TotalPages}
+          {/block:Pagination}
+          {block:NextPage}
+!             <a href={NextPage}> Next</a>
+          {/block:NextPage}
+  
+      </body>
