@@ -1,30 +1,29 @@
 Tumblr  my  Layout
-================
+==================
+Tumblrのテーマ置き場	
 
-　本来はブログサービスである*Tumblr*を、画像アップローダとして利用するために特化した軽量なカスタムテーマです。  
-　レイアウトはApacheの「整然としていて見やすい」ファイルリストを参考にしており、SNS特有の煩わしさを軽減します。  
+### Apache2_modoki	
+![](http://41.media.tumblr.com/1f5feda233ccb706a403a0de68623d76/tumblr_nk1ty6VNjm1u2jamko1_1280.png)	
 
-## Requirement  
+Apacheの*Index of /*のような見た目にするテーマ。	
+実質、画像アップローダとしての利用に特化。
 
-- Javascriptを実行できるWebブラウザ  
-  標準では、URLからファイル名のみを抽出する為にJavascriptを使用します。  
-もしJavascript実行環境を持たないブラウザで利用したい場合は、同梱の*without_js.patch*を適用してください。  
+* Requirement
+	* Javascriptを実行できるWebブラウザ  
+		標準では、URLからファイル名のみを抽出する為にJavascriptを使用します。  
+		Javascript実行環境を持たないブラウザで利用したい場合は、同梱の*without_js.patch*を適用してください。  
 
-## Install
-
+### Install
 　テーマのカスタマイズ画面から「HTMLを編集」を開き、既存のコードを本コードと置き換えて下さい。
 
-## Licence
-
+### Licence
 [MIT](http://opensource.org/licenses/mit-license.php)  
 Icons: [Public Domain](http://www.apache.org/icons/)  
 
-## Author
-
+### Author
 _github_ [sasairc](https://github.com/sasairc)  
 _twitter_  [@sasairc_2](https://twitter.com/sasairc_2)
 
-## Thanks  
-
+### Thanks  
   [Masaya Tk.さん](https://github.com/844196)のpullreq及び、アドバイスはとても参考になりました。  
   重ねて感謝致します。  
