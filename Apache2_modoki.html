@@ -12,13 +12,11 @@
                 #tumblr_controls { display: none; }
             {/block:IfHideTumblrControls}
         </style>
-
         <script type="text/javascript">
             _ScrapingURL = function(url) {
                     return url.match(".+/(.+?)([\?#;].*)?$")[1];
             };
         </script>
-
     </head>
     <body>
         {block:IndexPage}
@@ -37,7 +35,6 @@
         {/block:PermalinkPage}
 
         <table>
-
             <th><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th>
             <tr><th colspan="5"><hr></th></tr></th>
 
@@ -45,7 +42,7 @@
                 {block:PermalinkPage}
                     <tr>
                         <td>
-                            <img src="http://static.tumblr.com/fhczlfs/0cznepkn3/back.gif" alt="" width="50" height="50"/>
+                            <img src="http://static.tumblr.com/fhczlfs/0cznepkn3/back.gif" alt="" width="48" height="48"/>
                         </td>
                         <td>
                             <a href="/../..">Parent Directory</a>
@@ -54,12 +51,11 @@
                         <td align="right">-</td>
                     </tr>
                 {/block:PermalinkPage}
-
                 {block:Photo}
                     <div class="entry-content">
                         <tr>
-                            <td valign="top">
-                                <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="50" height="50"/>
+                            <td valign="center">
+                                <div style="height:48px; width:48px; background:url({PhotoURL-75sq}) no-repeat center;"></div>
                             </td>
                             <td>
 
@@ -82,6 +78,9 @@
                                 {block:Caption}
                                     {PhotoAlt}
                                 {/block:Caption}
+                                {block:RebloggedFrom}
+                                    <a href={ReblogParentURL}>{ReblogParentTitle} (@{ReblogParentName})</a>
+                                {/block:RebloggedFrom}
                             </td>
                             <td>
                                 &nbsp;
@@ -94,8 +93,8 @@
                     {block:Photoset}
                         <div class="entry-content">
                             <tr>
-                                <td valign="top">
-                                    <img src="http://static.tumblr.com/fhczlfs/mS0nepknk/folder.gif" alt="" width="50" height="50"/>
+                                <td valign="center">
+                                    <img src="http://static.tumblr.com/fhczlfs/mS0nepknk/folder.gif" alt="" width="48" height="48"/>
                                 </td>
                                 <td>
 
@@ -131,7 +130,7 @@
                             <div class="entry-content">
                                 <tr>
                                     <td>
-                                        <img src="{PhotoURL-250}" alt="" width="50" height="50"/>
+                                        <div style="height:48px; width:48px; background:url({PhotoURL-250}) no-repeat center;"></div>
                                     </td>
                                     <td>
 
@@ -154,6 +153,9 @@
                                         {block:Caption}
                                             {Caption}
                                         {/block:Caption}
+                                        {block:RebloggedFrom}
+                                            <a href={ReblogParentURL}>{ReblogParentTitle} (@{ReblogParentName})</a>
+                                        {/block:RebloggedFrom}
                                     </td>
                                     <td>
                                         &nbsp;
