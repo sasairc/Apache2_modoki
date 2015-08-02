@@ -1,25 +1,23 @@
-Tumblr  my  Layout
-==================
-Tumblrのテーマ置き場	
+Apache2_modoki
+===
+![](http://41.media.tumblr.com/1f5feda233ccb706a403a0de68623d76/tumblr_nk1ty6VNjm1u2jamko1_1280.png)
 
-### Apache2_modoki
-![](http://41.media.tumblr.com/1f5feda233ccb706a403a0de68623d76/tumblr_nk1ty6VNjm1u2jamko1_1280.png)	
+Apacheのファイルリスト (*Index of /*) のような見た目にするテーマ。	
+実質、画像アップローダとしての利用に特化しています。	
 
-Apacheのファイルリスト(*Index of /*)のような見た目にするテーマ。	
-実質、画像アップローダとしての利用に特化。	
+## Install
+テーマのカスタマイズ画面から「HTMLを編集」を開き、既存のコードを本コードと置き換えて下さい。
 
-### Install
-テーマのカスタマイズ画面から「HTMLを編集」を開き
-既存のコードを本コードと置き換えて下さい。
+## Thanks	
+* [Masaya Tk](https://github.com/844196)	
+	Pull Request及び、アドバイスはとても参考になりました。
+	重ねて感謝致します。	
 
-### Licence
-[MIT](http://opensource.org/licenses/mit-license.php)  
-Icons: [Public Domain](http://www.apache.org/icons/)	
+	[宣伝までして頂きました（うれしい）](http://844196.com/post/102372831044/)
 
-### Author	
-_github_ [sasairc](https://github.com/sasairc)	
-_twitter_  [@sasairc_2](https://twitter.com/sasairc_2)	
+## Licence
+[MIT License](http://opensource.org/licenses/mit-license.php)  
+[Public Domain](http://www.apache.org/icons/) (icons)
 
-### Thanks	
-[Masaya Tk.さん](https://github.com/844196)のpullreq及び、アドバイスはとても参考になりました。	
-重ねて感謝致します。	
+## Author	
+sasairc (https://github.com/sasairc)
