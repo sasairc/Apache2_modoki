@@ -12,174 +12,111 @@
                 #tumblr_controls { display: none; }
             {/block:IfHideTumblrControls}
         </style>
+
         <script type="text/javascript">
             _ScrapingURL = function(url) {
                     return url.match(".+/(.+?)([\?#;].*)?$")[1];
             };
         </script>
+
     </head>
     <body>
-        {block:IndexPage}
-            <title>Index of {Title}</title>
-            <h1>Index of {Title}</h1>
-        {/block:IndexPage}
-        {block:PermalinkPage}
-            <script type="text/javascript">
-                document.title = ('Index of ' + '{Title}' + _ScrapingURL('{Permalink}') + '/');
-            </script>
-            <h1>
-                <script type="text/javascript">
-                    document.write('Index of {Title}' + _ScrapingURL('{Permalink}') + '/');
-                </script>
-            </h1>
-        {/block:PermalinkPage}
-
+    {block:IndexPage}
+        <title>Index of {Title}</title>
+        <h1>Index of {Title}</h1>
         <table>
             <th><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th>
             <tr><th colspan="5"><hr></th></tr></th>
-
+            <td>
+                <img src="https://static.tumblr.com/fhczlfs/0cznepkn3/back.gif" alt="" width="48" height="48"/>
+            </td>
+            <td>
+                <a href="http://ssiserver.moe.hm/">Parent Directory</a>
+            </td>
             {block:Posts}
-                {block:PermalinkPage}
+                <div class="entry-content">
                     <tr>
-                        <td>
-                            <img src="http://static.tumblr.com/fhczlfs/0cznepkn3/back.gif" alt="" width="48" height="48"/>
+                        <td valign="center">
+                            {block:Text}
+                                <img src="https://66.media.tumblr.com/901b91c1095f7d384171fad61efe0703/1f4f51c4b64b81a7-40/s75x75_c1/3cebfadb41d1a7fa8b8458e0e0c691d420c49f0e.gifv" alt="" width="48" height="48"/>
+                            {/block:Text}
+                            {block:Photo}
+                                <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="48" height="48"/>
+                            {/block:Photo}
+                            {block:Photoset}
+                                <img src="https://static.tumblr.com/fhczlfs/mS0nepknk/folder.gif" alt="" width="48" height="48"/>
+                            {/block:Photoset}
+                            {block:Video}
+                                <img src="https://66.media.tumblr.com/7991f5af4c02ad7febc6dc1c6372f844/1f4f51c4b64b81a7-88/s75x75_c1/8bcda45708baca64321e61f818e2aa3ff4056bde.gifv" alt="" width="48" height="48"/>
+                            {/block:Video}
+                            {block:Audio}
+                                <img src="https://66.media.tumblr.com/574b8d4468e3faa51f42701f000a1e33/1f4f51c4b64b81a7-c8/s75x75_c1/c735a0ae580f90b3de3098a67a692a13348c38e0.gifv" alt="" width="48" height="48"/>
+                            {/block:Audio}
                         </td>
                         <td>
-                            <a href="/../..">Parent Directory</a>
-                        </td>
-                        <td></td>
-                        <td align="right">-</td>
-                    </tr>
-                {/block:PermalinkPage}
-                {block:Photo}
-                    <div class="entry-content">
-                        <tr>
-                            <td valign="center">
-                                <div style="height:48px; width:48px; background:url({PhotoURL-75sq}) no-repeat center;"></div>
-                            </td>
-                            <td>
-
-                                <!-- Start "Getting Filename from URL." -->
+                            {block:Text}
+                                <a href={Permalink}>
+                                    <script type="text/javascript">
+                                        document.write(_ScrapingURL('{Permalink}'));
+                                    </script>
+                                </a>
+                            {/block:Text}
+                            {block:Photo}
                                 <a href={PhotoURL-HighRes}>
                                     <script type="text/javascript">
                                         document.write(_ScrapingURL('{PhotoURL-HighRes}'));
                                     </script>
                                 </a>
-                                <!-- End "Getting Filename from URL." -->
-
-                            </td>
-                            <td align="right">
-                                {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-                            </td>
-                            <td align="right">
-                                <p>-</p>
-                            </td>
-                            <td align="right">
-                                {block:Caption}
-                                    {PhotoAlt}
-                                {/block:Caption}
-                                {block:RebloggedFrom}
-                                    <a href={ReblogParentURL}>{ReblogParentTitle} (@{ReblogParentName})</a>
-                                {/block:RebloggedFrom}
-                            </td>
-                            <td>
-                                &nbsp;
-                            </td>
-                        </tr>
-                    </div>
-                {/block:Photo}
-
-                {block:IndexPage}
-                    {block:Photoset}
-                        <div class="entry-content">
-                            <tr>
-                                <td valign="center">
-                                    <img src="http://static.tumblr.com/fhczlfs/mS0nepknk/folder.gif" alt="" width="48" height="48"/>
-                                </td>
-                                <td>
-
-                                    <!-- Start "Getting Posts Title (Photoset) from URL." -->
-                                    <a href={Permalink}>
-                                        <script type="text/javascript">
-                                            document.write(_ScrapingURL('{Permalink}') + '/');
-                                        </script>
-                                    </a>
-                                    <!-- End "Getting Posts Title (Photoset) from URL." -->
-
-                                </td>
-                                <td align="right">
-                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-                                </td>
-                                <td align="right">
-                                    <p>-</p>
-                                </td>
-                                <td align="right">
-
-                                </td>
-                                <td>
-                                    &nbsp;
-                                </td>
-                            </tr>
-                        </div>
-                    {/block:Photoset}
-                {/block:IndexPage}
-                
-                {block:PermalinkPage}
-                    {block:Photoset}
-                        {block:Photos}
-                            <div class="entry-content">
-                                <tr>
-                                    <td>
-                                        <div style="height:48px; width:48px; background:url({PhotoURL-250}) no-repeat center;"></div>
-                                    </td>
-                                    <td>
-
-                                        <!-- Start "Getting Filename from URL." -->
-                                        <a href={PhotoURL-HighRes}>
-                                            <script type="text/javascript">
-                                                document.write(_ScrapingURL('{PhotoURL-HighRes}'));
-                                            </script>
-                                        </a>
-                                        <!-- End "Getting Filename from URL." -->
-
-                                    </td>
-                                    <td align="right">
-                                        {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
-                                    </td>
-                                    <td align="right">
-                                        <p>-</p>
-                                    </td>
-                                    <td align="right">
-                                        {block:Caption}
-                                            {Caption}
-                                        {/block:Caption}
-                                        {block:RebloggedFrom}
-                                            <a href={ReblogParentURL}>{ReblogParentTitle} (@{ReblogParentName})</a>
-                                        {/block:RebloggedFrom}
-                                    </td>
-                                    <td>
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                            </div>
-                        {/block:Photos}
-                    {/block:Photoset}
-                {/block:PermalinkPage}
-
+                            {/block:Photo}
+                            {block:Photoset}
+                                <a href={Permalink}>
+                                    <script type="text/javascript">
+                                        document.write(_ScrapingURL('{Permalink}') + '/');
+                                    </script>
+                                </a>
+                            {/block:Photoset}
+                            {block:Video}
+                                <a href={Permalink}>
+                                    <script type="text/javascript">
+                                        document.write(_ScrapingURL('{Permalink}'));
+                                    </script>
+                                </a>
+                            {/block:Video}
+                            {block:Audio}
+                                <a href={Permalink}>
+                                    <script type="text/javascript">
+                                        document.write(_ScrapingURL('{Permalink}'));
+                                    </script>
+                                </a>
+                            {/block:Audio}
+                        </td>
+                        <td align="right">
+                            {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                        </td>
+                        <td align="right">
+                            <p>-</p>
+                        </td>
+                        <td align="right">
+                            {block:RebloggedFrom}
+                                <a href={ReblogParentURL}>@{ReblogParentName}</a>
+                            {/block:RebloggedFrom}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </div>
             {/block:Posts}
-
-            <tr><th colspan="5"><hr></th></tr>
         </table>
-
+        <tr><th colspan="5"><hr></th></tr>
         <address>
             {block:IfBottomStrings}
                 {text:Bottom Strings}
             {/block:IfBottomStrings}
             {block:IfNotBottomStrings}
-                Tumblr/Apache2_modoki at tumblr.com Port 80
+                Tumblr/Apache2_modoki at tumblr.com Port 443
             {/block:IfNotBottomStrings}
         </address>
-
         {block:PreviousPage}
             <a href={PreviousPage}>Prev</a>
         {/block:PreviousPage}
@@ -189,6 +126,85 @@
         {block:NextPage}
             <a href={NextPage}>Next</a>
         {/block:NextPage}
+    {/block:IndexPage}
 
+
+    {block:PermalinkPage}
+        {block:Posts}
+            {block:Text}
+                <h2>{Title}</h2>
+                <p>{Body}</p>
+            {/block:Text}
+            {block:Photoset}
+                <script type="text/javascript">
+                    document.title = ('Index of ' + '{Title}' + "/" + _ScrapingURL('{Permalink}'));
+                </script>
+                <h1>
+                    <script type="text/javascript">
+                        document.write('Index of {Title}' + "/" + _ScrapingURL('{Permalink}'));
+                    </script>
+                </h1>
+                <table>
+                    <th><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th>
+                    <tr><th colspan="5"><hr></th></tr></th>
+                    <tr>
+                        <td>
+                            <img src="https://static.tumblr.com/fhczlfs/0cznepkn3/back.gif" alt="" width="48" height="48"/>
+                        </td>
+                        <td>
+                            <a href="/../..">Parent Directory</a>
+                        </td>
+                        <td></td>
+                        <td align="right">-</td>
+                    </tr>
+                    {block:Photos}
+                        <div class="entry-content">
+                            <tr>
+                                <td>
+                                    <img src="{PhotoURL-250}" alt="" width="48" height="48"/>
+                                </td>
+                                <td>
+                                    <a href={PhotoURL-HighRes}>
+                                        <script type="text/javascript">
+                                            document.write(_ScrapingURL('{PhotoURL-HighRes}'));
+                                        </script>
+                                    </a>
+                                </td>
+                                <td align="right">
+                                    {DayOfMonthWithZero}-{ShortMonth}-{Year} {24HourWithZero}:{Minutes}
+                                </td>
+                                <td align="right">
+                                    <p>-</p>
+                                </td>
+                                <td align="right">
+                                    {block:RebloggedFrom}
+                                        <a href={ReblogParentURL}>@{ReblogParentName}</a>
+                                    {/block:RebloggedFrom}
+                                </td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </div>
+                    {/block:Photos}
+                </table>
+                <tr><th colspan="5"><hr></th></tr>
+                <address>
+                    {block:IfBottomStrings}
+                    {text:Bottom Strings}
+                    {/block:IfBottomStrings}
+                    {block:IfNotBottomStrings}
+                        Tumblr/Apache2_modoki at tumblr.com Port 443
+                    {/block:IfNotBottomStrings}
+                </address>
+            {/block:Photoset}
+            {block:Video}
+                <div class="video">{Video-750}</div>
+            {/block:Video}
+            {block:Audio}
+                <div class="audio">{AudioPlayer}</div>
+            {/block:Audio}
+        {/block:Posts}
+    {/block:PermalinkPage}
     </body>
 </html>
