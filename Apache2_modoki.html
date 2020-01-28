@@ -40,6 +40,13 @@
                             {block:Text}
                                 <img src="https://66.media.tumblr.com/901b91c1095f7d384171fad61efe0703/1f4f51c4b64b81a7-40/s75x75_c1/3cebfadb41d1a7fa8b8458e0e0c691d420c49f0e.gifv" alt="" width="48" height="48"/>
                             {/block:Text}
+                            {block:Quote}
+                                <img src="https://66.media.tumblr.com/901b91c1095f7d384171fad61efe0703/1f4f51c4b64b81a7-40/s75x75_c1/3cebfadb41d1a7fa8b8458e0e0c691d420c49f0e.gifv" alt="" width="48" height="48"/>
+                            {/block:Quote}
+                            {block:Link}
+                                <img src="https://66.media.tumblr.com/4e37e1aad630a4a4e1feed58e8732777/1f4f51c4b64b81a7-af/s75x75_c1/e9565a8a2eafed1be405383eb85355566ef2df6c.gifv" alt="" width="48" height="48"/>
+                            {/block:Quote}
+                            {/block:Link}
                             {block:Photo}
                                 <img src={PhotoURL-75sq} alt="{PhotoAlt}" width="48" height="48"/>
                             {/block:Photo}
@@ -61,6 +68,12 @@
                                     </script>
                                 </a>
                             {/block:Text}
+                            {block:Quote}
+                                <a href={Permalink}>{PostID}</a>
+                            {/block:Quote}
+                            {block:Link}
+                                <a href={URL}>{HOST}</a>
+                            {/block:Link}
                             {block:Photo}
                                 <a href={PhotoURL-HighRes}>
                                     <script type="text/javascript">
@@ -135,6 +148,10 @@
                 <h2>{Title}</h2>
                 <p>{Body}</p>
             {/block:Text}
+            {block:Quote}
+                <blockquote>{quote}</blockquote>
+                <div class="source">{source}</div>
+            {/block:Quote}
             {block:Photoset}
                 <script type="text/javascript">
                     document.title = ('Index of ' + '{Title}' + "/" + _ScrapingURL('{Permalink}'));
@@ -199,7 +216,7 @@
                 </address>
             {/block:Photoset}
             {block:Video}
-                <div class="video">{Video-750}</div>
+                <div class="video">{Video-500}</div>
             {/block:Video}
             {block:Audio}
                 <div class="audio">{AudioPlayer}</div>
